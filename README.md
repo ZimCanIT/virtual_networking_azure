@@ -1,6 +1,8 @@
 # Implementing virtual networking in Azure
 
-Aim: use terraform to deploy virtual netwokring in Azure. [Source](https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator/blob/master/Instructions/Labs/LAB_04-Implement_Virtual_Networking.md)
+Aim: use terraform to deploy virtual netwokring in Azure. 
+
+[AZ-104 lab source](https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator/blob/master/Instructions/Labs/LAB_04-Implement_Virtual_Networking.md)
 CLI driven workflow, used for a sole operator. State is stored locally.
 
 ## Prerequisites
