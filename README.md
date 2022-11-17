@@ -1,4 +1,4 @@
-# Implementing virtual networking in Azure
+# Implementing virtual networking in Azure with Terraform
 
 Aim: use terraform to deploy virtual netwokring in Azure; in preparation for the AZ-104 exam. 
 
