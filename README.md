@@ -18,3 +18,5 @@ CLI driven workflow, used for a sole operator. State is stored locally.
 * A network security group applied at the NIC level of both virtual machines.
 * Azure DNS configure for both internal and external name resolution
 
+![image](https://user-images.githubusercontent.com/77082071/202557140-b0ab941f-79e8-4026-a4c3-9c5ad4110ba0.png)
+
