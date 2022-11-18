@@ -7,6 +7,8 @@ terraform {
   }
 }
 
+#-------------------------------------------------------------
+
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {
@@ -32,3 +34,5 @@ resource "azurerm_resource_group" "az104_vnet_rg" {
 
   tags = local.common_tags
 }
+
+#-------------------------------------------------------------
