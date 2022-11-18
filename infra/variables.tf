@@ -12,6 +12,7 @@ variable "vm_pwd" {
   type        = string
   description = "RDP password for virtual machines"
 }
+
 #-------------------------------------------------------------
 
 locals {
