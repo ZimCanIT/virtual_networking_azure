@@ -8,8 +8,8 @@ resource "azurerm_windows_virtual_machine" "az104_lab4_vms" {
   # https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable
   # will upgrade vm series type after service quota increase request in West Europe region for vm vCpus is aproved: \n
   # https://blogs.sap.com/2017/03/16/how-to-increase-the-quota-for-your-subscription-in-microsoft-azure-portal/
-  # capacity:  2 vCPU + 4 GiB memory
-  size           = "Standard_B2s"
+  # capacity:  4 vCPU + 16 GiB memory
+  size           = "Standard_B4ms"
   admin_username = "zimcanit-admin"
   admin_password = var.vm_pwd
 

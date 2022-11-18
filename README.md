@@ -22,3 +22,8 @@ Aim: use terraform to deploy virtual netwokring in Azure; in preparation for the
 
 ![image](https://user-images.githubusercontent.com/77082071/202557140-b0ab941f-79e8-4026-a4c3-9c5ad4110ba0.png)
 
+## Last steps - task 5 and 6 - configure Azure DNS for internal name resolution +  Configure Azure DNS for external name resolution
+
+
+
+

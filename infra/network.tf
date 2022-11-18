@@ -6,12 +6,12 @@ resource "azurerm_virtual_network" "az104_lab4_vnet" {
 }
 
 resource "azurerm_subnet" "az104_lab4_subnet" {
-  count = length(local.subnet_ips)
+  count                = length(local.subnet_ips)
   name                 = "Subnet${count.index}"
   virtual_network_name = azurerm_virtual_network.az104_lab4_vnet.name
   resource_group_name  = azurerm_resource_group.az104_vnet_rg.name
   # iterating over list of subnet ips
-  address_prefixes = ["${local.subnet_ips[count.index]}"] 
+  address_prefixes = ["${local.subnet_ips[count.index]}"]
 }
 
 #-------------------------------------------------------------
@@ -31,7 +31,7 @@ resource "azurerm_public_ip" "az104_lab4_public_ip" {
 
 # nics for vms
 resource "azurerm_network_interface" "az104_lab4_nic" {
-  count = 2
+  count               = 2
   name                = "${local.resource_prefix}nic${count.index}"
   location            = azurerm_resource_group.az104_vnet_rg.location
   resource_group_name = azurerm_resource_group.az104_vnet_rg.name
@@ -43,7 +43,7 @@ resource "azurerm_network_interface" "az104_lab4_nic" {
     private_ip_address_version = "IPv4"
     # dynamic assignment of a private IPv4 address
     private_ip_address_allocation = "Dynamic"
-    # public ip to associate to each NIC
+    # public ip to associate to each NIC e.g. public IP address of declared virtual machines 
     public_ip_address_id = azurerm_public_ip.az104_lab4_public_ip[count.index].id
   }
 }
