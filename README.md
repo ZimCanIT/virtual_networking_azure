@@ -33,15 +33,34 @@ vm_pwd          = "yourVmPasswordHere"
 > This will be the username used to authenticate to the virtual machines via RDP.
 
 
-3. Within the infra subfolder, run commands:
+3. Within the infra subfolder, run commands below to deploy the infrastructure.
 * `terraform init`
 * `terraform validate`
 * `terraform plan -out="dns-config.tfplan"`
 * `terraform apply --auto-approve ".\dns-config.tfplan"`
+
 4. Customise the internal DNS domain name or external domain name in `dns.tf` to your preference.
+
+5. Launch an RDP session to a vm instance and test internal name resolution.
+* The output of the command will include the private IP address of the virtual machine (10.40.1.4)
+
+```
+nslookup az104-04-vm0.contoso.org
+nslookup az104-04-vm1.contoso.org
+```
+
+6. Within cloud shell, test the DNS record set in your DNS zone.
+* Output will include the public IP address of your virtual machine.
+```
+nslookup az104-04-vm0.[domain name] [Name server 1]
+```
+
+7. Within the infra sub-folder, destroy your infrastructure: 
+* `terraform destroy --auto-approve`
 
 ## Useful Links
 
 1. [Overview of DNS zones and records - Azure](https://learn.microsoft.com/en-us/azure/dns/dns-zones-records)
 2. [Detailed troubleshooting steps for remote desktop connection issues to Windows VMs in Azure](https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/detailed-troubleshoot-rdp)
 3. [Network security groups](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview)
+4. [Terraform authenticate using the Azure CLI](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli)
